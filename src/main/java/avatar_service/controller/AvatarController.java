@@ -5,7 +5,6 @@ import spark.Request;
 import spark.Response;
 
 import java.io.IOException;
-import java.net.URI;
 import java.net.URISyntaxException;
 
 /**
@@ -20,7 +19,7 @@ public class AvatarController {
         this.service=service;
     }
 
-    public URI getAvatar(Request request, Response response) throws URISyntaxException, IOException {
-        return service.avatar("jpg");
+    public String getAvatar(Request request, Response response) throws URISyntaxException, IOException {
+        return service.avatar(1);
     }
 }
