@@ -27,13 +27,13 @@ public class AvatarService {
 
         links.add("goo.gl/4ZKXbh\n");
         links.add("goo.gl/jP8gDY\n");
-        links.add("goo.gl/SQUeTe\n");
+        links.add("goo.gl/M1vDTh\n");
         links.add("goo.gl/SNXHjv\n");
         links.add("goo.gl/5pHsWy\n");
         links.add("goo.gl/uG3Q9Q\n");
         links.add("goo.gl/J64rRy\n");
         links.add("goo.gl/ggJGe6\n");
-        links.add("goo.gl/5BgHvr\n");
+        links.add("goo.gl/r5kIJs\n");
         links.add("goo.gl/WyKrLI");
 
         // --- MAPPINGS ---
