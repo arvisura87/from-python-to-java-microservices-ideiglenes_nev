@@ -9,6 +9,6 @@ import spark.Response;
 public class AvatarController {
     public String status(Request request, Response response) {
 
-        return "ok";
+        return "working";
     }
 }

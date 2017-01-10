@@ -17,7 +17,7 @@ public class AvatarService {
 
     public static void main(String[] args) {
 
-        setup(args);
+        port(60000);
 
         AvatarController controller = new AvatarController();
 
