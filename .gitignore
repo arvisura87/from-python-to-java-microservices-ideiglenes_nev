@@ -7,9 +7,7 @@
 *.iml
 out
 gen
-.gitignore
 .idea/
 from-python-to-java-microservices-ideiglenes_nev.iml
 out/
-src/
 target/
