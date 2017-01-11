@@ -13,17 +13,17 @@ public class ThemeController {
     public String getTheme(Request request, Response response) {
         LocalDate today = LocalDate.now();
         int month = today.getMonthValue();
-        int actual = 4; // 11, 0, 1 --> Winter:1;   2, 3, 4 --> Spring:2;   5, 6, 7 --> Summer:3;   8, 9, 10 --> Autumn:4
+        int actual = 3; // 11, 0, 1 --> Winter:0;   2, 3, 4 --> Spring:1;   5, 6, 7 --> Summer:2;   8, 9, 10 --> Autumn:3
         if ( month == 11 || month == 0 || month == 1 ){
             actual = 0;
         }
-        else if (month == 2 || month == 3 || month == 4){
+        else if (month>=2 && month<=4){
             actual = 1;
         }
-        else if (month == 5 || month == 6 || month == 7){
+        else if (month>=5 && month<=7){
             actual = 2;
         }
-        else if (month == 8 || month == 9 || month == 10){
+        else {
             actual = 3;
         }
 
