@@ -1,24 +1,16 @@
 package theme_service.controller;
 
-import theme_service.service.ThemeAPIService;
 import spark.Request;
 import spark.Response;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ThemeController {
 
-    private ThemeAPIService service;
-
-    public ThemeController(ThemeAPIService service) {
-
-        this.service=service;
-    }
-
-    public String getTheme(Request request, Response response) throws URISyntaxException, IOException {
+    public String getTheme(Request request, Response response) {
         LocalDate today = LocalDate.now();
         int month = today.getMonthValue();
         int actual = 4; // 11, 0, 1 --> Winter:1;   2, 3, 4 --> Spring:2;   5, 6, 7 --> Summer:3;   8, 9, 10 --> Autumn:4
@@ -34,6 +26,13 @@ public class ThemeController {
         else if (month == 8 || month == 9 || month == 10){
             actual = 3;
         }
-        return service.theme(actual);
+
+        List<String> links = new ArrayList<>();
+        links.add("https://bootswatch.com/superhero/bootstrap.min.css\n");
+        links.add("https://bootswatch.com/lumen/bootstrap.min.css\n");
+        links.add("https://bootswatch.com/cerulean/bootstrap.min.css\n");
+        links.add("https://bootswatch.com/united/bootstrap.min.css");
+
+        return links.get(actual);
     }
 }

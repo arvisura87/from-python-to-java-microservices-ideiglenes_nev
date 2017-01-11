@@ -1,20 +1,14 @@
 package theme_service;
 
 import theme_service.controller.ThemeController;
-import theme_service.service.ThemeAPIService;
 
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
-
 import static spark.Spark.*;
 
 
 public class ThemeService {
 
     private ThemeController controller;
-    public static final List<String> links = new ArrayList<>();
-
 
     public static void main(String[] args) {
 
@@ -22,12 +16,7 @@ public class ThemeService {
 
         ThemeService application = new ThemeService();
 
-        application.controller = new ThemeController(ThemeAPIService.getInstance());
-
-        links.add("winter\n");
-        links.add("spring\n");
-        links.add("summer\n");
-        links.add("autumn");
+        application.controller = new ThemeController();
 
         // --- MAPPINGS ---
         get("/theme", application.controller::getTheme);
