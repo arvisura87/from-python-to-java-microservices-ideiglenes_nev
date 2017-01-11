@@ -1,24 +1,15 @@
 package avatar_service.controller;
 
-import avatar_service.service.AvatarAPIService;
 import spark.Request;
 import spark.Response;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class AvatarController {
 
-    private AvatarAPIService service;
-
-    public AvatarController(AvatarAPIService service) {
-
-        this.service=service;
-    }
-
-    public String getAvatar(Request request, Response response) throws URISyntaxException, IOException {
+    public String getAvatar(Request request, Response response){
         String sess = request.session().id();
         int sum = 0;
         for ( int i = 0; i < sess.length(); i++){
@@ -26,6 +17,18 @@ public class AvatarController {
         }
         sum%=10;
 
-        return service.avatar(sum);
+        List<String> links = new ArrayList<>();
+        links.add("goo.gl/4ZKXbh\n");
+        links.add("goo.gl/jP8gDY\n");
+        links.add("goo.gl/M1vDTh\n");
+        links.add("goo.gl/SNXHjv\n");
+        links.add("goo.gl/5pHsWy\n");
+        links.add("goo.gl/uG3Q9Q\n");
+        links.add("goo.gl/J64rRy\n");
+        links.add("goo.gl/ggJGe6\n");
+        links.add("goo.gl/r5kIJs\n");
+        links.add("goo.gl/WyKrLI");
+
+        return links.get(sum);
     }
 }

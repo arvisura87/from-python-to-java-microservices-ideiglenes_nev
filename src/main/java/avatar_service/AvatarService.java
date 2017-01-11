@@ -1,19 +1,14 @@
 package avatar_service;
 
 import avatar_service.controller.AvatarController;
-import avatar_service.service.AvatarAPIService;
 
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
 
 import static spark.Spark.*;
 
 
 public class AvatarService {
     private AvatarController controller;
-    public static final List<String> links = new ArrayList<>();
-
 
     public static void main(String[] args) {
 
@@ -21,18 +16,7 @@ public class AvatarService {
 
         AvatarService application = new AvatarService();
 
-        application.controller = new AvatarController(AvatarAPIService.getInstance());
-
-        links.add("goo.gl/4ZKXbh\n");
-        links.add("goo.gl/jP8gDY\n");
-        links.add("goo.gl/M1vDTh\n");
-        links.add("goo.gl/SNXHjv\n");
-        links.add("goo.gl/5pHsWy\n");
-        links.add("goo.gl/uG3Q9Q\n");
-        links.add("goo.gl/J64rRy\n");
-        links.add("goo.gl/ggJGe6\n");
-        links.add("goo.gl/r5kIJs\n");
-        links.add("goo.gl/WyKrLI");
+        application.controller = new AvatarController();
 
         // --- MAPPINGS ---
         get("/avatar", application.controller::getAvatar);
