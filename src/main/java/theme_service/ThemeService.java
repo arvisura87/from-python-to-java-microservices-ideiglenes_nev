@@ -24,10 +24,10 @@ public class ThemeService {
 
         application.controller = new ThemeController(ThemeAPIService.getInstance());
 
+        links.add("winter\n");
         links.add("spring\n");
         links.add("summer\n");
-        links.add("autumn\n");
-        links.add("winter");
+        links.add("autumn");
 
         // --- MAPPINGS ---
         get("/theme", application.controller::getTheme);
