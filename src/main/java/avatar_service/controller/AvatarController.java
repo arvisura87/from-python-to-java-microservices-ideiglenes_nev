@@ -10,7 +10,7 @@ import java.util.List;
 public class AvatarController {
 
     public String getAvatar(Request request, Response response){
-        String sess = request.session().id();
+        String sess = request.queryParams("sessionid");
         int sum = 0;
         for ( int i = 0; i < sess.length(); i++){
             sum += Character.getNumericValue(sess.charAt(i));
