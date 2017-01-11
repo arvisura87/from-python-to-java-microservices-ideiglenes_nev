@@ -15,7 +15,6 @@ public class ThemeService {
     private ThemeController controller;
     public static final List<String> links = new ArrayList<>();
 
-
     public static void main(String[] args) {
 
         port(60001);
