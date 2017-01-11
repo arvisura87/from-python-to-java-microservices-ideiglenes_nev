@@ -1,10 +1,13 @@
 package theme_service.controller;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import spark.Request;
 import spark.Response;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -33,6 +36,18 @@ public class ThemeController {
         links.add("https://bootswatch.com/cerulean/bootstrap.min.css\n");
         links.add("https://bootswatch.com/united/bootstrap.min.css");
 
-        return links.get(actual);
+        List<String> backgrounds = new ArrayList<>();
+        backgrounds.add("https://goo.gl/6Gtx5N");
+        backgrounds.add("https://goo.gl/t7RhQK");
+        backgrounds.add("https://goo.gl/NXhvph");
+        backgrounds.add("https://goo.gl/NpcYaY");
+
+        HashMap result = new HashMap();
+        result.put("stylesheet", links.get(actual));
+        result.put("background-image", backgrounds.get(actual));
+
+        GsonBuilder builder = new GsonBuilder();
+        Gson gson = builder.create();
+        return gson.toJson(result);
     }
 }
