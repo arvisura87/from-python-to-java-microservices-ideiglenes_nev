@@ -7,15 +7,9 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-/**
- * Created by jakab on 2017.01.10..
- */
+
 public class AvatarAPIService {
 
-    /*
-     example link
-     */
-//    private static final String API_URL="http://im.ziffdavisinternational.com/ign_hu/screenshot/default/avatar2_ugmy.jpg";
     private static AvatarAPIService INSTANCE;
     private static AvatarService service;
 

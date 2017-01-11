@@ -8,9 +8,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Random;
 
-/**
- * Created by jocc on 2017.01.09..
- */
+
 public class AvatarController {
 
     private AvatarAPIService service;
@@ -21,23 +19,13 @@ public class AvatarController {
     }
 
     public String getAvatar(Request request, Response response) throws URISyntaxException, IOException {
-//        String sess = request.session().id();
-//        int first = Character.getNumericValue(sess.charAt(0));
-//        int r = (int) first;
-//        while (r > 9)
-//        {
-//            r = r / 10;
-//        }
-        int result;
-        if (request.session().attribute("rnNr") == null) {
-            Random r = new Random();
-            int low = 0;
-            int high = 10;
-            result = r.nextInt(high-low) + low;
-            request.session().attribute("rnNr", result);
-        } else {
-            result = request.session().attribute("rnNr");
+        String sess = request.session().id();
+        int sum = 0;
+        for ( int i = 0; i < sess.length(); i++){
+            sum += Character.getNumericValue(sess.charAt(i));
         }
-        return service.avatar(result);
+        sum%=10;
+
+        return service.avatar(sum);
     }
 }

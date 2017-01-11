@@ -9,9 +9,7 @@ import java.util.List;
 
 import static spark.Spark.*;
 
-/**
- * Created by jocc on 2017.01.09..
- */
+
 public class AvatarService {
     private AvatarController controller;
     public static final List<String> links = new ArrayList<>();
