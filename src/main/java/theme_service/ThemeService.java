@@ -1,25 +1,25 @@
-package avatar_service;
+package theme_service;
 
-import avatar_service.controller.AvatarController;
+import theme_service.controller.ThemeController;
 
 import java.net.URISyntaxException;
-
 import static spark.Spark.*;
 
 
-public class AvatarService {
-    private AvatarController controller;
+public class ThemeService {
+
+    private ThemeController controller;
 
     public static void main(String[] args) {
 
-        port(60000);
+        port(60001);
 
-        AvatarService application = new AvatarService();
+        ThemeService application = new ThemeService();
 
-        application.controller = new AvatarController();
+        application.controller = new ThemeController();
 
         // --- MAPPINGS ---
-        get("/avatar", application.controller::getAvatar);
+        get("/theme", application.controller::getTheme);
 
         // --- EXCEPTION HANDLING ---
         exception(URISyntaxException.class, (exception, request, response) -> {
