@@ -18,7 +18,7 @@ It consists of 2 files, the AvatarController and AvatarService, the first one co
 
 > - Clone the repository of our microservice and open the file structure with an IDE like IntelliJ
 > - Run the server, named AvatarService
-> - It runs on the localhost:60000
+> - It runs on the localhost:60000/avatar?sessionid="insert session id here"
 
 Request/response
 --------------------------

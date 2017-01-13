@@ -31,9 +31,9 @@ public class ThemeController {
         }
 
         List<String> links = new ArrayList<>();
-        links.add("https://bootswatch.com/superhero/bootstrap.min.css\n");
-        links.add("https://bootswatch.com/lumen/bootstrap.min.css\n");
-        links.add("https://bootswatch.com/cerulean/bootstrap.min.css\n");
+        links.add("https://bootswatch.com/superhero/bootstrap.min.css");
+        links.add("https://bootswatch.com/lumen/bootstrap.min.css");
+        links.add("https://bootswatch.com/cerulean/bootstrap.min.css");
         links.add("https://bootswatch.com/united/bootstrap.min.css");
 
         List<String> backgrounds = new ArrayList<>();
