@@ -6,9 +6,18 @@ import java.net.URISyntaxException;
 
 import static spark.Spark.*;
 
+/**
+ * @author      Tamás Jakab
+ * @version     0.9
+ */
 
 public class AvatarService {
     private AvatarController controller;
+
+    /**
+     * The server starts on localhost/600000
+     * @param args
+     */
 
     public static void main(String[] args) {
 

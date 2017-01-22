@@ -6,8 +6,20 @@ import spark.Response;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author      Tamás Jakab
+ * @version     0.9
+ */
 
 public class AvatarController {
+
+    /**
+     * <p>The method adds the numbers of the numeric values of the session id characters and after it after the divison
+     * with remainder based on the number from 0 to 9 it give a link of an avatar picture from a hashmap.</p>
+     * @param request
+     * @param response
+     * @return String: a link of an avatar picture.
+     */
 
     public String getAvatar(Request request, Response response){
         String sess = request.queryParams("sessionid");
